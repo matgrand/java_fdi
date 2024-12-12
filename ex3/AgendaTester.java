@@ -30,7 +30,7 @@ class Agenda implements PriorityQueue {
     */
     private class Impegno { //non modificare!!   
         public Impegno(int priority, String memo) {
-             //gestione di priorità invalida
+            //gestione di priorità invalida
             if ((priority > 3) || (priority < 0)) {
                 throw new IllegalArgumentException();
             }
