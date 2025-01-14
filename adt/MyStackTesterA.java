@@ -3,13 +3,14 @@ interface Stack {
     void push(Object item);
     Object pop();
     int size();
+    boolean isEmpty();
 }
 
 // Implementation of the Stack ADT using an array
 class MyStack implements Stack {
     private Object[] stack;
     private int ssize;
-    private static final int INITIAL_CAPACITY = 10;
+    private static final int INITIAL_CAPACITY = 1;
 
     public MyStack() {
         stack = new Object[INITIAL_CAPACITY];
@@ -24,7 +25,7 @@ class MyStack implements Stack {
     }
 
     public Object pop() {
-        if (ssize == 0) {
+        if (isEmpty()) {
             throw new IllegalStateException("Stack is empty");
         }
         Object item = stack[--ssize];
@@ -34,6 +35,10 @@ class MyStack implements Stack {
 
     public int size() {
         return ssize;
+    }
+
+    public boolean isEmpty() {
+        return ssize == 0;
     }
 
     private void resize() {

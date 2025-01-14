@@ -3,6 +3,7 @@ interface Queue {
     void enqueue(Object item);
     Object dequeue();
     int size();
+    boolean isEmpty();
 }
 
 // Implementation of the Queue ADT using a linked list
@@ -39,12 +40,12 @@ class MyQueue implements Queue {
     }
 
     public Object dequeue() {
-        if (front == null) {
+        if (isEmpty()) {
             throw new IllegalStateException("Queue is empty");
         }
         Object item = front.data;
         front = front.next;
-        if (front == null) {
+        if (isEmpty()) {
             rear = null;
         }
         count--;
@@ -53,6 +54,10 @@ class MyQueue implements Queue {
 
     public int size() {
         return count;
+    }
+
+    public boolean isEmpty() {
+        return front == null;
     }
 
     public String toString() {

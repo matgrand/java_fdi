@@ -3,6 +3,7 @@ interface Queue {
     void enqueue(Object item);
     Object dequeue();
     int size();
+    boolean isEmpty();
 }
 
 // Implementation of the Queue ADT using a circular array
@@ -11,7 +12,7 @@ class MyQueue implements Queue {
     private int front;
     private int rear;
     private int count;
-    private static final int INITIAL_CAPACITY = 10;
+    private static final int INITIAL_CAPACITY = 1;
 
     public MyQueue() {
         queue = new Object[INITIAL_CAPACITY];
@@ -30,7 +31,7 @@ class MyQueue implements Queue {
     }
 
     public Object dequeue() {
-        if (count == 0) {
+        if (isEmpty()) {
             throw new IllegalStateException("Queue is empty");
         }
         Object item = queue[front];
@@ -41,6 +42,10 @@ class MyQueue implements Queue {
 
     public int size() {
         return count;
+    }
+
+    public boolean isEmpty() {
+        return count == 0;
     }
 
     private void resize() {

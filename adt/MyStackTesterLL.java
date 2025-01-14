@@ -3,6 +3,7 @@ interface Stack {
     void push(Object item);
     Object pop();
     int size();
+    boolean isEmpty();
 }
 
 // Implementation of the Stack ADT using a linked list
@@ -33,13 +34,17 @@ class MyStack implements Stack {
     }
 
     public Object pop() {
-        if (top == null) {
+        if (isEmpty()) {
             throw new IllegalStateException("Stack is empty");
         }
         Object item = top.data;
         top = top.next;
         ssize--;
         return item;
+    }
+
+    public boolean isEmpty() {
+        return top == null;
     }
 
     public int size() {
