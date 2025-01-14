@@ -8,80 +8,8 @@ interface List {
 
 // Implementation of the List ADT using a linked list
 class MyList implements List {
-    private static class Node {
-        Object data;
-        Node next;
-
-        Node(Object data) {
-            this.data = data;
-            this.next = null;
-        }
-    }
-
-    private Node head;
-    private int size;
-
-    public MyList() {
-        head = null;
-        size = 0;
-    }
-
-    public void insert(Object item, int idx) {
-        if (idx < 0 || idx > size) {
-            throw new IndexOutOfBoundsException("Index out of bounds");
-        }
-        Node newNode = new Node(item);
-        if (idx == 0) {
-            newNode.next = head;
-            head = newNode;
-        } else {
-            Node current = head;
-            for (int i = 0; i < idx - 1; i++) {
-                current = current.next;
-            }
-            newNode.next = current.next;
-            current.next = newNode;
-        }
-        size++;
-    }
-
-    public Object remove(int idx) {
-        if (idx < 0 || idx >= size) {
-            throw new IndexOutOfBoundsException("Index out of bounds");
-        }
-        Object item;
-        if (idx == 0) {
-            item = head.data;
-            head = head.next;
-        } else {
-            Node current = head;
-            for (int i = 0; i < idx - 1; i++) {
-                current = current.next;
-            }
-            item = current.next.data;
-            current.next = current.next.next;
-        }
-        size--;
-        return item;
-    }
-
-    public boolean isEmpty() {
-        return size == 0;
-    }
-
-    public int size() {
-        return size;
-    }
-
-    public String toString() {
-        String result = "List: [ ";
-        Node current = head;
-        while (current != null) {
-            result += current.data + " ";
-            current = current.next;
-        }
-        return result + "] (" + size() + ")";
-    }
+    // complete the implementation
+    
 }
 
 // Tester class for MyList

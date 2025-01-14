@@ -8,53 +8,8 @@ interface Stack {
 
 // Implementation of the Stack ADT using an array
 class MyStack implements Stack {
-    private Object[] stack;
-    private int ssize;
-    private static final int INITIAL_CAPACITY = 1;
-
-    public MyStack() {
-        stack = new Object[INITIAL_CAPACITY];
-        ssize = 0;
-    }
-
-    public void push(Object item) {
-        if (ssize == stack.length) {
-            resize();  // Resize the array if it's full
-        }
-        stack[ssize++] = item;
-    }
-
-    public Object pop() {
-        if (isEmpty()) {
-            throw new IllegalStateException("Stack is empty");
-        }
-        Object item = stack[--ssize];
-        stack[ssize] = null;  // Nullify the reference for garbage collection
-        return item;
-    }
-
-    public int size() {
-        return ssize;
-    }
-
-    public boolean isEmpty() {
-        return ssize == 0;
-    }
-
-    private void resize() {
-        int newCapacity = stack.length * 2;
-        Object[] newStack = new Object[newCapacity];
-        System.arraycopy(stack, 0, newStack, 0, stack.length);
-        stack = newStack;
-    }
-
-    public String toString() {
-        String result = "Stack: [ ";
-        for (int i = 0; i < ssize; i++) {
-            result += stack[i] + " ";
-        }
-        return result + "] (" + size() + ")";
-    }
+    // complete the implementation
+    
 }
 
 // Tester class for MyStack
