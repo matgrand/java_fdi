@@ -108,7 +108,7 @@ public class CellularAutomaton {
             }
             to_ret += "\n";
         }
-        System.out.println(to_ret);
+        System.out.print(to_ret);
 
         System.out.flush();  
         // try { Thread.sleep(20); } catch (InterruptedException e) 
