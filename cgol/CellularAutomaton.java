@@ -3,7 +3,7 @@ import java.util.Random;
 public class CellularAutomaton {
     private static final int COLS = 87; // 158 // 119 // 87
     private static final int ROWS = 42; // 70  // 59  // 42
-    private static final float FPS = 3; // Frames per second
+    private static final double FPS = 30; // Frames per second
     private static Random random = new Random();
     private static boolean[][] grid = new boolean[ROWS][COLS];
 
